@@ -104,32 +104,32 @@ public class MainFrame extends JFrame {
         ///////////////////////////////////////////////////////////////////////////
         final ButtonGroup myButtons = new ButtonGroup();
 
-        JRadioButton radio1 = new JRadioButton("Вкл.", true);
-        myButtons.add(radio1);
-        radio1.addActionListener(new ActionListener() {
+        //JRadioButton radio1 = new JRadioButton("Вкл.", true);
+        //myButtons.add(radio1);
+        //radio1.addActionListener(new ActionListener() {
+//
+//
+        //    public void actionPerformed(ActionEvent e) {
+        //        if (!turn) {
+        //            turn = true;
+        //            textAreaIncoming.append("Клиент включен" + "\n");
+        //            buttonSend.setEnabled(true);
+        //        }
+        //    }
+        //});
 
-
-            public void actionPerformed(ActionEvent e) {
-                if (!turn) {
-                    turn = true;
-                    textAreaIncoming.append("Клиент включен" + "\n");
-                    buttonSend.setEnabled(true);
-                }
-            }
-        });
-
-        JRadioButton radio2 = new JRadioButton("Выкл.", true);
-        myButtons.add(radio2);
-        radio2.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                if (turn) {
-                    turn = false;
-                    textAreaIncoming.append("Клиент выключен" + "\n");
-                    buttonSend.setEnabled(false);
-                }
-            }
-        });
+        //JRadioButton radio2 = new JRadioButton("Выкл.", true);
+        //myButtons.add(radio2);
+        //radio2.addActionListener(new ActionListener() {
+//
+        //    public void actionPerformed(ActionEvent e) {
+        //        if (turn) {
+        //            turn = false;
+        //            textAreaIncoming.append("Клиент выключен" + "\n");
+        //            buttonSend.setEnabled(false);
+        //        }
+        //    }
+        //});
 
         // Компоновка элементов панели "Сообщение"
         final GroupLayout layout2 = new GroupLayout(messagePanel);
@@ -147,8 +147,8 @@ public class MainFrame extends JFrame {
                                 .addGap(SMALL_GAP)
                                 .addComponent(textFieldTo))
                         .addComponent(scrollPaneOutgoing)
-                        .addComponent(radio1)
-                        .addComponent(radio2)
+                        //.addComponent(radio1)
+                        //.addComponent(radio2)
                         .addComponent(buttonSend))
                 .addContainerGap());
         layout2.setVerticalGroup(layout2.createSequentialGroup()
@@ -163,8 +163,8 @@ public class MainFrame extends JFrame {
                 .addComponent(scrollPaneOutgoing)
                 .addGap(MEDIUM_GAP)
                 .addComponent(buttonSend)
-                .addComponent(radio1)
-                .addComponent(radio2)
+                //.addComponent(radio1)
+                //.addComponent(radio2)
                 .addContainerGap());
 
         // Компоновка элементов фрейма
@@ -251,9 +251,10 @@ public class MainFrame extends JFrame {
                 return;
             }
             if (destinationAddress.isEmpty()) {
-                JOptionPane.showMessageDialog(this,
-                        "Введите адрес узла-получателя", "Ошибка",
-                        JOptionPane.ERROR_MESSAGE);
+                //JOptionPane.showMessageDialog(this,
+                //        "Введите адрес узла-получателя", "Ошибка",
+                //        JOptionPane.ERROR_MESSAGE);
+                textFieldTo.requestFocus();
                 return;
             }
             if (message.isEmpty()) {
